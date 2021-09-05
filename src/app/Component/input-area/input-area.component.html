@@ -1,0 +1,16 @@
+<app-result-area [Calulator]="calculator"></app-result-area>
+<div  class="row" >
+  <div  class="col-4" *ngFor = "let num of number"  >
+    <button class="btn btn-success font-weight-bold w-100 m-2 " (click)="numberClick(num)"> {{num}}</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4" *ngFor = "let opt of operator" >
+    <button class="btn btn-primary w-100 font-weight-bold  w-100 m-2 " (click)="operationClick(opt)"> {{opt}}</button>
+  </div>
+
+</div>
+
+<button *ngIf="calculator.firstNumber && calculator.secondNumber" class="btn btn-danger w-100 font-weight-bold  w-100 m-2 " (click)="calculateValue(calculator.firstNumber,calculator.secondNumber)"> Calculate</button>
+<button *ngIf="calculator.firstNumber" class="btn btn-danger w-100 font-weight-bold  w-100 m-2 " (click)="Clear()"> Clear</button>
+
